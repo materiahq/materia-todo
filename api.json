@@ -1,0 +1,42 @@
+[
+	{
+		"method": "get",
+		"url": "/todos",
+		"query": {
+			"entity": "todo",
+			"id": "list"
+		}
+	},
+	{
+		"method": "get",
+		"url": "/todos/:id",
+		"query": {
+			"entity": "todo",
+			"id": "get"
+		}
+	},
+	{
+		"method": "post",
+		"url": "/todos",
+		"query": {
+			"entity": "todo",
+			"id": "create"
+		}
+	},
+	{
+		"method": "put",
+		"url": "/todos/:id",
+		"query": {
+			"entity": "todo",
+			"id": "update"
+		}
+	},
+	{
+		"method": "delete",
+		"url": "/todos/:id",
+		"query": {
+			"entity": "todo",
+			"id": "delete"
+		}
+	}
+]

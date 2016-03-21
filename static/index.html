@@ -1,0 +1,46 @@
+<html lang="en" >
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link rel="stylesheet" href="/css/main.css">  
+</head>
+<body ng-app="TodoApp" ng-controller="AppCtrl" ng-cloak>
+	<md-toolbar>
+		<div class="md-toolbar-tools" layout="row">
+			<h3>{{todos.length||0}} Todo{{todos.length > 1 ? 's' : ''}}</h3>
+			<span flex></span>
+			<md-button ng-show="getDoneTask().length" ng-click="removeTodos($event)" class="md-icon-button">
+				<md-tooltip>Remove finished task</md-tooltip>
+				<md-icon>delete</md-icon>
+			</md-button>
+			<md-button ng-click="addTodo($event)" class="md-icon-button">
+				<md-tooltip>Create</md-tooltip>
+				<md-icon>add</md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+	<md-list>
+		<md-list-item ng-repeat="todo in todos | orderBy:'done'">
+			<md-checkbox ng-click="toggleDone(todo)" ng-model="todo.done"></md-checkbox> <span ng-class="{'done': todo.done}">{{todo.task}}</span>
+		</md-list-item>
+	</md-list>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+	<!-- Your application bootstrap  -->
+
+	<script type="text/javascript">window.app = angular.module('TodoApp', ['ngMaterial'])</script>
+	<script type="text/javascript" src="/js/todo.service.js"></script>
+	<script type="text/javascript" src="/js/todo.ctrl.js"></script>
+	<script type="text/javascript" src="/js/app.ctrl.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<md-dialog aria-label="New task">
+	<form>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Create a new task</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="cancel()">
+					<md-icon aria-label="Close dialog">highlight_off</md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+		<md-dialog-content layout="column" layout-padding>
+			<div layout="row">
+				<md-input-container flex>
+					<label>Task</label>
+					<input required md-autofocus type="text" ng-model="todo.task">
+					<div ng-messages="todo.task.$error" role="alert">
+                        <div ng-message-exp="['required']">
+                            This field is required
+                        </div>
+	                </div>
+				</md-input-container>
+			</div>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<span flex></span>
+			<md-button class="md-primary" ng-click="ok()">
+					Create
+			</md-button>
+			<md-button ng-click="cancel()" style="margin-right:20px;">
+					Cancel
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>
