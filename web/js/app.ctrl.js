@@ -9,6 +9,20 @@ app.controller('AppCtrl', function($scope, $mdDialog, $q, TodoService) {
 		})
 	}
 
+	var nbDoneTodo = 0;
+	$scope.getNotDoneTodoLength = function() {
+		var res = 0;
+		for (var i in $scope.todos) {
+			if (! $scope.todos[i].done) {
+				res++;
+			}
+		}
+		if (res != nbDoneTodo) {
+			nbDoneTodo = res
+		}
+		return nbDoneTodo;
+	}
+
 	$scope.addTodo = function(ev) {
 		$mdDialog.show({
 			controller: 'TodoCtrl',
@@ -23,7 +37,7 @@ app.controller('AppCtrl', function($scope, $mdDialog, $q, TodoService) {
 			$scope.todos.push(todo)
 		})
 	}
-		
+
 	var doneTask = [];
 	$scope.getDoneTask = function() {
 		doneTask.splice(0, doneTask.length) //clear the array without creating a new one.

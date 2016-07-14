@@ -1,5 +1,5 @@
 {
-	"name": "todo",
+	"id": "9d505da7-34fe-460d-a88b-d7bfb7a92910",
 	"fields": [
 		{
 			"name": "id",
@@ -32,18 +32,31 @@
 			"write": true,
 			"default": true,
 			"defaultValue": false
-		},
-		{
-			"name": "deadline",
-			"type": "date",
-			"primary": false,
-			"unique": false,
-			"required": false,
-			"read": true,
-			"write": true,
-			"default": false
 		}
 	],
-	"relations": [],
-	"queries": []
+	"queries": [
+		{
+			"id": "getDoneTodos",
+			"type": "findAll",
+			"params": [
+				{
+					"name": "page",
+					"type": "number",
+					"required": false,
+					"$$hashKey": "object:1243"
+				}
+			],
+			"opts": {
+				"conditions": [
+					{
+						"name": "done",
+						"operator": "=",
+						"value": "true"
+					}
+				],
+				"limit": "10",
+				"page": "=page"
+			}
+		}
+	]
 }
