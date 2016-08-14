@@ -2,7 +2,7 @@ app.factory('TodoService', function($http) {
 	return {
 		apiRoot: 'http://localhost:8080/api',
 		list: function() {
-			return $http.get(this.apiRoot + '/todos')
+			return $http.get(this.apiRoot + '/todos?limit=200&page=1')
 		},
 
 		add: function(data) {

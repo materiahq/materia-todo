@@ -1,5 +1,6 @@
 {
 	"name": "Todo",
-	"description": "List your task and manage them!",
-	"author": "thyb"
+	"icon": {
+		"color": "deep-orange-400"
+	}
 }

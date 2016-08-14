@@ -1,6 +1,6 @@
 app.controller('AppCtrl', function($scope, $mdDialog, $q, TodoService) {
 	TodoService.list().success(function(data) {
-			$scope.todos = data
+		$scope.todos = data
 	})
 
 	$scope.toggleDone = function(todo) {
@@ -11,9 +11,13 @@ app.controller('AppCtrl', function($scope, $mdDialog, $q, TodoService) {
 
 	var nbDoneTodo = 0;
 	$scope.getNotDoneTodoLength = function() {
+		if ( ! $scope.todos || ! $scope.todos.rows ) {
+			return 0
+		}
+
 		var res = 0;
-		for (var i in $scope.todos) {
-			if (! $scope.todos[i].done) {
+		for (var i in $scope.todos.rows) {
+			if (! $scope.todos.rows[i].done) {
 				res++;
 			}
 		}
@@ -34,15 +38,21 @@ app.controller('AppCtrl', function($scope, $mdDialog, $q, TodoService) {
 				todo: null
 			}
 		}).then(function(todo) {
-			$scope.todos.push(todo)
+			TodoService.list().success(function(data) {
+				$scope.todos = data
+			})
 		})
 	}
 
 	var doneTask = [];
 	$scope.getDoneTask = function() {
+		if ( ! $scope.todos || ! $scope.todos.rows ) {
+			return 0
+		}
+
 		doneTask.splice(0, doneTask.length) //clear the array without creating a new one.
-		for (var i in $scope.todos) {
-			var todo = $scope.todos[i];
+		for (var i in $scope.todos.rows) {
+			var todo = $scope.todos.rows[i];
 			if (todo.done) {
 				doneTask.push(todo.id)
 			}
@@ -52,11 +62,13 @@ app.controller('AppCtrl', function($scope, $mdDialog, $q, TodoService) {
 
 	$scope.removeTodos = function() {
 		var p = $q.resolve()
-		for (var i in $scope.todos) {
+		let nbRm = 0;
+		for (var i in $scope.todos.rows) {
 			(function(i) {
 				p = p.then(function() {
-					var todo = $scope.todos[i]
+					var todo = $scope.todos.rows[i]
 					if (todo.done) {
+						nbRm++;
 						return TodoService.del(todo.id)
 					}
 					else {
@@ -66,8 +78,8 @@ app.controller('AppCtrl', function($scope, $mdDialog, $q, TodoService) {
 			})(i)
 		}
 		p.then(function() {
-			$scope.todos = $scope.todos.filter(function(e) {
-				return ! e.done
+			TodoService.list().success(function(data) {
+				$scope.todos = data
 			})
 		})
 	}

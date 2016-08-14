@@ -42,8 +42,7 @@
 				{
 					"name": "page",
 					"type": "number",
-					"required": false,
-					"$$hashKey": "object:1243"
+					"required": false
 				}
 			],
 			"opts": {
@@ -54,7 +53,7 @@
 						"value": "true"
 					}
 				],
-				"limit": "10",
+				"limit": "15",
 				"page": "=page"
 			}
 		}
