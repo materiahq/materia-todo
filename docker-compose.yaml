@@ -1,0 +1,14 @@
+version: "3"
+services:
+  db: 
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    depends_on:
+      - db
+    environment:
+      MATERIA_MODE: "production"
+      NO_HOST: "true"

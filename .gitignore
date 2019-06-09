@@ -1,1 +1,4 @@
-history/changes.json
+materia.json
+materia.prod.json
+.materia
+node_modules

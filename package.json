@@ -1,0 +1,19 @@
+{
+	"name": "todo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"postinstall": "materia relink",
+		"start": "materia start",
+		"ng": "ng"
+	},
+	"dependencies": {
+		"@materia/server": ">=1.0.0-beta.1"
+	},
+	"engines": {
+		"node": ">= 4.3.2"
+	},
+	"author": "",
+	"license": "MIT"
+}

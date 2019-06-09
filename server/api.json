@@ -17,7 +17,7 @@
 	},
 	{
 		"method": "put",
-		"url": "/todos/:id",
+		"url": "/todos/:id_todo",
 		"query": {
 			"entity": "todo",
 			"id": "update"
@@ -25,26 +25,10 @@
 	},
 	{
 		"method": "delete",
-		"url": "/todos/:id",
+		"url": "/todos/:id_todo",
 		"query": {
 			"entity": "todo",
 			"id": "delete"
-		}
-	},
-	{
-		"method": "get",
-		"url": "/todos/done",
-		"query": {
-			"entity": "todo",
-			"id": "getDoneTodos"
-		}
-	},
-	{
-		"method": "get",
-		"url": "/todos/:id",
-		"query": {
-			"entity": "todo",
-			"id": "get"
 		}
 	}
 ]

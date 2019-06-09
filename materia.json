@@ -1,6 +1,14 @@
 {
 	"name": "Todo",
-	"icon": {
-		"color": "deep-orange-400"
-	}
+	"icon": "blue-400",
+	"server": {
+		"host": "localhost",
+		"port": 8080,
+		"ssl": false
+	},
+	"database": {
+		"storage": "database.sqlite",
+		"type": "sqlite"
+	},
+	"links": []
 }

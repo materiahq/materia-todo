@@ -1,0 +1,35 @@
+{
+	"id": "cc6218f7-805e-4b70-914a-5b75145616a8",
+	"fields": [
+		{
+			"name": "id_todo",
+			"type": "number",
+			"read": true,
+			"write": false,
+			"primary": true,
+			"unique": true,
+			"required": true,
+			"autoIncrement": true,
+			"component": "input"
+		},
+		{
+			"name": "task",
+			"type": "text",
+			"read": true,
+			"write": true,
+			"required": true,
+			"component": "input"
+		},
+		{
+			"name": "done",
+			"type": "boolean",
+			"read": true,
+			"write": true,
+			"default": true,
+			"defaultValue": false,
+			"component": "switch"
+		}
+	],
+	"relations": [],
+	"queries": []
+}
