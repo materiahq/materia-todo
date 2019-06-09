@@ -4,9 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"ng": "ng",
 		"postinstall": "materia relink",
-		"start": "materia start",
-		"ng": "ng"
+		"start": "materia start"
 	},
 	"dependencies": {
 		"@materia/server": ">=1.0.0-beta.1"
@@ -15,5 +15,6 @@
 		"node": ">= 4.3.2"
 	},
 	"author": "",
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {}
 }

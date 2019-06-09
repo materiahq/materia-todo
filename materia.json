@@ -7,8 +7,15 @@
 		"ssl": false
 	},
 	"database": {
-		"storage": "database.sqlite",
-		"type": "sqlite"
+		"type": "sqlite",
+		"storage": "database.sqlite"
 	},
-	"links": []
+	"links": [],
+	"client": {
+		"www": "client/dist/todo",
+		"packageJsonPath": "client",
+		"scripts": {
+			"build": "build"
+		}
+	}
 }
