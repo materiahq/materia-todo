@@ -4,7 +4,7 @@ Simple todo application to list your tasks
 
 ![Screenshot](https://raw.githubusercontent.com/materiahq/materia-todo/master/screenshot.PNG)
 
-Materia Todo is a sample application of [Materia](getmateria.com)
+Materia Todo is a [Materia](https://getmateria.com) sample application.
 
 Prerequisites
 ------------
