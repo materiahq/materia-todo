@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+    <h3>Todos</h3>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="openModal()">
+      <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-list *ngIf="todos?.length; else noTodosTemplate">
+  <mat-list-item *ngFor="let todo of todos">
+    <mat-icon mat-list-icon [color]="todo.done ? 'success' : 'warn'">
+      {{ todo.done ? 'done' : 'close'}}
+    </mat-icon>
+    <span>{{ todo.task }}</span>
+    <span class="spacer"></span>
+    <button mat-button color="primary" (click)="updateTaskStatus(todo)">
+      {{ todo.done ? 'mark as todo' : 'mark as done'}}
+    </button>
+    <button mat-icon-button (click)="deleteTask(todo.id_todo)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+
+<ng-template #noTodosTemplate>
+  <div class="empty-message">
+      <span>You haven't any task todo yet</span>
+  </div>
+</ng-template>
+
+<ng-template #todoFormTemplate>
+  <form [formGroup]="todoForm" (submit)="addTask()">
+    <mat-form-field>
+      <input matInput placeholder="task" formControlName="task" required>
+      <mat-error>This field is required.</mat-error>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button type="button" mat-dialog-close>
+        Cancel
+      </button>
+      <button mat-raised-button color="primary" type="submit">
+        Save
+      </button>
+    </div>
+  </form>
+</ng-template>
