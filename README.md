@@ -2,7 +2,7 @@
 
 Simple todo application to list your tasks
 
-![Screenshot](https://raw.githubusercontent.com/thyb/materia-todo/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/materiahq/materia-todo/master/screenshot.png)
 
 Materia Todo is a sample application of [Materia](getmateria.com)
 
@@ -26,7 +26,7 @@ Installation
 You just need to clone the repository
 
 ```sh
-git clone git@github.com:thyb/materia-todo.git
+git clone git@github.com:materiahq/materia-todo.git
 cd materia-todo
 ```
 
@@ -43,4 +43,4 @@ By default, this application is configured to run with SQLite to ease the instal
 
 You can also run it using Materia Designer:
 
-![Installation](https://raw.githubusercontent.com/thyb/materia-todo/master/todo-install.gif)
+![Installation](https://raw.githubusercontent.com/materiahq/materia-todo/master/todo-install.gif)
