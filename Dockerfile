@@ -9,7 +9,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN npm install
+RUN npm install && cd client && npm install && npm run true
 
 ENV MATERIA_MODE production
 
