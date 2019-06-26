@@ -11,11 +11,11 @@ Prerequisites
 
 You need to install Materia to run this application (through Materia Server (CLI) or Materia Designer (Mac & Windows application))
 
-** Materia Server **
+**Materia Server**
 
 `npm install -g materia-server`
 
-** Materia Designer **
+**Materia Designer**
 
 Go to [getmateria.com](https://getmateria.com) and grab the latest version.
 
@@ -33,7 +33,11 @@ cd materia-todo
 Start the server
 ----------------
 
-Using the CLI:
+```sh
+npm run start
+```
+
+Or using global @materia/server:
 
 ```sh
 materia start
